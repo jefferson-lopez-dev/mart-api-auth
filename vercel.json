@@ -1,6 +1,4 @@
 {
-  "version": 2,
-  "buildCommand": "next build",
   "builds": [
     {
       "src": "./src/index.js",

@@ -22,7 +22,7 @@ route.post("/logout", useLogoutAccount);
 route.get("/verify-token", useVerifyToken);
 route.get("/account", TokenRequired, useGetAccount);
 rout1.get("/", (req, res) => {
-  res.json({ message: "Jefferson : What a temptation not to write 😥" });
+  res.send("Jefferson : What a temptation not to write 😥");
 });
 
 export default route;

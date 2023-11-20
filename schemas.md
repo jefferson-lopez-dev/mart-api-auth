@@ -1,4 +1,4 @@
-# Documentación del Esquema \`awgap\` (Accounts with Gmail Password)
+# Documentación del Esquema \`awgap\` (Accoxunts with Gmail Password)
 
 Este esquema define la estructura de los documentos almacenados en la colección \`awgap\` de la base de datos MongoDB. Estos documentos representan registros de usuarios de una aplicación que utilizan Gmail como nombre de usuario y contraseña.
 

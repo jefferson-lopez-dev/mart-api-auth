@@ -21,9 +21,8 @@ route.post("/register", validateSchema(validatedRegister), useRegisterGmail);
 route.post("/logout", useLogoutAccount);
 route.get("/verify-token", useVerifyToken);
 route.get("/account", TokenRequired, useGetAccount);
-
 rout1.get("/", (req, res) => {
-  res.json({ token: "12312312312" });
+  res.json({ message: "Jefferson : What a temptation not to write 😥" });
 });
 
 export default route;

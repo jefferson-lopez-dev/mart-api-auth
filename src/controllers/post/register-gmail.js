@@ -51,7 +51,7 @@ export const useRegisterGmail = async (req, res) => {
     });
   } catch (error) {
     return res.json({
-      message: null,
+      message: error.message,
       status: 500,
       error: "Internal error occurred while creating account",
     });

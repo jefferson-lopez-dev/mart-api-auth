@@ -22,7 +22,7 @@ route.post("/logout", useLogoutAccount);
 route.get("/verify-token", useVerifyToken);
 route.get("/account", TokenRequired, useGetAccount);
 rout1.get("/", (req, res) => {
-  res.send("Jefferson : What a temptation not to write 😥");
+  res.send("Mart Auth Api 📌");
 });
 
 export default route;

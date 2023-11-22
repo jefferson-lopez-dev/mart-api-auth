@@ -1,5 +1,5 @@
-import app from "./app.js";
-import { ConnectionDB } from "./data-base.js";
+import app from "./src/app.js";
+import { ConnectionDB } from "./src/data-base.js";
 import * as dotenv from "dotenv";
 import colors from "colors";
 

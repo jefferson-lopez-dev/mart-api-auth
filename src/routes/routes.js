@@ -14,11 +14,15 @@ import {
 } from "../controllers/index.js";
 
 const route = Router();
+export const rout1 = Router();
 
 route.post("/login", validateSchema(validatedLogin), useLoginGmail);
 route.post("/register", validateSchema(validatedRegister), useRegisterGmail);
 route.post("/logout", useLogoutAccount);
 route.get("/verify-token", useVerifyToken);
 route.get("/account", TokenRequired, useGetAccount);
+rout1.get("/", (req, res) => {
+  res.send("Jefferson : What a temptation not to write 😥");
+});
 
 export default route;

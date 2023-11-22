@@ -6,7 +6,7 @@ export const useLoginGmail = async (req, res) => {
   try {
     const { gmail, password } = req.body;
 
-    return res.json({ message: "Login" });
+    // return res.json({ message: "Login" });
 
     const gmail_found = await Gmail.findOne({ gmail });
     if (!gmail_found) {

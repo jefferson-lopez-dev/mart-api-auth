@@ -6,9 +6,9 @@ import colors from "colors";
 dotenv.config();
 ConnectionDB();
 
-const PORT = process.env.PORT || 3013;
+const PORT = process.env.PORT || 3030;
 
 app.listen(PORT, () => {
   console.log(` ● Server on port ${PORT} `.toUpperCase().bgBrightBlue.bold);
-  console.log(" ➞ http://localhost:3013 ".underline.black.bold);
+  console.log(` ➞ http://localhost:${PORT} `.underline.black.bold);
 });

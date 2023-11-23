@@ -9,16 +9,27 @@ export const useVerifyToken = async (req, res) => {
   const TOKEN_SECRET = process.env.TOKEN_SECRET;
 
   if (!TK_AWGAP)
-    return res.json({ message: null, status: 401, error: "Invalid TK_AWGAP" });
+    return res.json({
+      token: false,
+      message: null,
+      status: 401,
+      error: "Invalid TK_AWGAP",
+    });
 
   jwt.verify(TK_AWGAP, TOKEN_SECRET, async (err, gmail) => {
     if (err) {
-      return res.json({ message: null, status: 401, error: "Unauthorized" });
+      return res.json({
+        token: false,
+        message: null,
+        status: 401,
+        error: "Unauthorized",
+      });
     }
 
     const gmail_found = await Gmail.findById(gmail.id);
     if (!gmail_found) {
       return res.json({
+        token: false,
         message: null,
         status: 401,
         error: "Account not found, Unauthorized",
@@ -26,6 +37,7 @@ export const useVerifyToken = async (req, res) => {
     }
 
     return res.json({
+      token: true,
       account: {
         id: gmail_found._id,
         gmail: gmail_found.gmail,

@@ -5,10 +5,7 @@ import cors from "cors";
 
 const app = express();
 
-const allowedOrigins = [
-  "https://api-mart-auth.onrender.com",
-  "http://localhost:3000",
-];
+const allowedOrigins = ["https://mart-pos.vercel.app", "http://localhost:3000"];
 
 app.use(
   cors({

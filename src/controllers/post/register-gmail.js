@@ -32,11 +32,7 @@ export const useRegisterGmail = async (req, res) => {
     const saveGmail = await dataGmail.save();
 
     const token = await CreateAccessToken({ id: saveGmail._id });
-    res.cookie("TK_AWGAP", token, {
-      sameSite: "none",
-      secure: true,
-      httpOnly: true,
-    });
+    res.cookie("TK_AWGAP", token);
 
     const account = saveGmail;
     return res.json({

@@ -6,8 +6,6 @@ export const useLoginGmail = async (req, res) => {
   try {
     const { gmail, password } = req.body;
 
-    // return res.json({ message: "Login" });
-
     const gmail_found = await Gmail.findOne({ gmail });
     if (!gmail_found) {
       return res.json({
@@ -27,10 +25,7 @@ export const useLoginGmail = async (req, res) => {
     }
 
     const token = await CreateAccessToken({ id: gmail_found._id });
-    res.cookie("TK_AWGAP", token, {
-      sameSite: "none",
-      secure: true,
-    });
+    res.cookie("TK_AWGAP", token);
 
     const account = gmail_found;
     return res.json({

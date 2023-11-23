@@ -25,7 +25,11 @@ export const useLoginGmail = async (req, res) => {
     }
 
     const token = await CreateAccessToken({ id: gmail_found._id });
-    res.cookie("TK_AWGAP", token);
+    res.cookie("TK_AWGAP", token, {
+      sameSite: "none",
+      secure: true,
+      httpOnly: true,
+    });
 
     const account = gmail_found;
     return res.json({

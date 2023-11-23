@@ -5,13 +5,14 @@ import cors from "cors";
 
 const app = express();
 
+const allowedOrigins = ["https://mart-pos.vercel.app", "http://localhost:3000"];
+
 app.use(
   cors({
-    origin: {
-      global,
-    },
+    origin: allowedOrigins,
     methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
     credentials: true,
+    allowedHeaders: "Content-Type,Authorization",
   })
 );
 app.use(express.json());

@@ -36,7 +36,6 @@ export const useRegisterGmail = async (req, res) => {
       sameSite: "none",
       secure: true,
       httpOnly: true,
-      domain: "mart-pos.vercel.app",
     });
 
     const account = saveGmail;

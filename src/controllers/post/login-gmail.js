@@ -29,6 +29,7 @@ export const useLoginGmail = async (req, res) => {
       sameSite: "none",
       secure: true,
       httpOnly: true,
+      domain: ".vercel.app",
     });
 
     const account = gmail_found;
